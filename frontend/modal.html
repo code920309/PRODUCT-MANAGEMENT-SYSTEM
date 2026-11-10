@@ -1,0 +1,66 @@
+<!-- 상품 등록/수정 모달 템플릿 -->
+<div id="productModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modalTitle">상품 등록</h2>
+            <button type="button" class="modal-close-btn" id="closeModalBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <form id="productForm">
+            <!-- 수정 시 사용할 상품 ID 숨김 필드 -->
+            <input type="hidden" id="productId">
+
+            <div class="form-group">
+                <label for="productName">상품명 <span class="required">*</span></label>
+                <input type="text" id="productName" required placeholder="상품명을 입력하세요">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="productCode">상품 코드</label>
+                    <input type="text" id="productCode" placeholder="미입력시 자동 생성 (예: P001)">
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">카테고리 <span class="required">*</span></label>
+                    <input type="text" id="productCategory" required placeholder="예: 전자제품, 주변기기">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="productPrice">판매 가격 (원) <span class="required">*</span></label>
+                    <input type="number" id="productPrice" required min="0" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="productQuantity">재고 수량 <span class="required">*</span></label>
+                    <input type="number" id="productQuantity" required min="0" placeholder="0">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="productMinQuantity">안전 재고 기준</label>
+                    <input type="number" id="productMinQuantity" value="10" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="productStatus">판매 상태</label>
+                    <select id="productStatus">
+                        <option value="판매중">판매중</option>
+                        <option value="판매중지">판매중지</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="productSupplier">공급업체</label>
+                <input type="text" id="productSupplier" placeholder="공급업체명을 입력하세요">
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" id="cancelModalBtn">취소</button>
+                <button type="submit" class="btn-primary" id="saveProductBtn">저장하기</button>
+            </div>
+        </form>
+    </div>
+</div>
