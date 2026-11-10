@@ -54,15 +54,40 @@
                 <div class="toolbar">
                     <div class="search-box">
                         <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                        <input type="text" placeholder="상품명 또는 상품 코드 검색">
+                        <input type="text" placeholder="상품명 또는 상품 코드 검색" id="searchInput">
                     </div>
+
                     <div class="filter-actions">
+                        <!-- 1. 카테고리 필터 -->
                         <div class="select-box">
-                            <select>
-                                <option>전체 카테고리</option>
+                            <select id="categorySelect">
+                                <option value="전체 카테고리">전체 카테고리</option>
                             </select>
                             <i class="fa-solid fa-chevron-down select-arrow"></i>
                         </div>
+
+                        <!-- 2. 판매 상태 필터 (전체 / 판매중 / 판매중지) -->
+                        <div class="select-box">
+                            <select id="statusSelect">
+                                <option value="전체 상태">전체 상태</option>
+                                <option value="판매중">판매중</option>
+                                <option value="판매중지">판매중지</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down select-arrow"></i>
+                        </div>
+
+                        <!-- 3. 정렬 옵션 (기본순, 가격순, 재고순) -->
+                        <div class="select-box">
+                            <select id="sortSelect">
+                                <option value="latest">최신 등록순</option>
+                                <option value="price-asc">가격 낮은순</option>
+                                <option value="price-desc">가격 높은순</option>
+                                <option value="stock-desc">재고 많은순</option>
+                                <option value="stock-asc">재고 적은순</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down select-arrow"></i>
+                        </div>
+
                         <button class="btn-primary" id="openCreateModalBtn">
                             <i class="fa-solid fa-plus"></i> 상품 등록
                         </button>
@@ -71,36 +96,16 @@
 
                 <!-- 상품 목록 리스트 -->
                 <div class="product-list">
-                    <!-- 상품 카드 아이템 -->
-                    <div class="product-card">
-                        <div class="product-main-info">
-                            <div class="product-left">
-                                <input type="checkbox" class="product-checkbox">
-                                <div class="product-details">
-                                    <div class="product-title-row">
-                                        <h3 class="product-name">삼성 모니터</h3>
-                                        <span class="badge-status">판매중</span>
-                                    </div>
-                                    <p class="product-meta">P001 · 전자제품</p>
-                                    <p class="product-supplier">공급업체: 삼성전자</p>
-                                </div>
-                            </div>
-                            <div class="product-right">
-                                <div class="product-price">250,000원</div>
-                                <div class="product-stock text-success">재고 30개</div>
-                            </div>
-                        </div>
-                        <div class="product-footer">
-                            <div class="action-buttons">
-                                <button class="btn-action btn-edit">
-                                    <i class="fa-solid fa-pen"></i> 수정
-                                </button>
-                                <button class="btn-action btn-delete">
-                                    <i class="fa-solid fa-trash-can"></i> 삭제
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- 상품 카드 아이템들이 동적으로 렌더링됩니다 -->
+                </div>
+
+                <!-- [추가] 4. 페이지네이션 UI 영역 -->
+                <div class="pagination-container" id="paginationContainer"
+                    style="display: flex; justify-content: center; gap: 8px; margin-top: 24px;">
+                    <!-- 페이지 번호 버튼들이 동적으로 생성됩니다 -->
+                </div>
+                <!-- 상품 목록 리스트 -->
+                <div class="product-list">
                 </div>
             </section>
         </main>
