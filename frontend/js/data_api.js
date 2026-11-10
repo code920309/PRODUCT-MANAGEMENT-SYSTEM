@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://product-management-system-wqot.onrender.com";
 
 // 페이지네이션 및 필터 상태 변수
 let currentPage = 1;
