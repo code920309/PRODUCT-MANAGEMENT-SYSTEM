@@ -8,7 +8,7 @@ a = FastAPI()
 
 a.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://product-management-system-1-1n5s.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
